@@ -24,6 +24,9 @@ a {
     outline: none;
     font-family: 'Open Sans', sans-serif;
 }
+#__next {
+  flex: 1 1 auto;
+}
 body{
     position: relative;
 }
@@ -352,12 +355,12 @@ i{
     padding-top: 10%;
 } */
 .div-curve .overlay{
-    width: 100vw;
-    margin-left: calc(5vw);
-    position: absolute;
-    top: -70px;
-    left: 0;
-    opacity: .3;
+    width: 100vw !important;
+    margin-left: calc(5vw) !important ;
+    position: absolute !important;
+    top: -70px !important;
+    left: 0 !important;
+    opacity: .3 !important;
 }
 
 /* for image cureve only  */
@@ -933,18 +936,28 @@ i{
 }
 .top-header{
     background-color: var(--web-grey);
-    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    justify-content: end;
+    padding: 0px 10px !important;
 }
 
-.top-header img{
-    width: 30px;
+.MuiToolbar-root span img:first-child{
+    width: 30px !important;
+    float: left;
 }
-.top-header a{
-    color: #95A2AC;
-    padding: 0 30px;
+.MuiBox-root button{
+    color: #95A2AC !important;
+    padding: 0 30px !important;
+    font-size: 14px;
+}
+.MuiBox-root button:last-child{
+  background-color: var(--web-gold);
+  color: black !important;
+  padding: 6px 12px !important;
+    width: 100px;
+    border-radius: 4px;
 }
 .top-header ul li{
     display: flex;
@@ -1042,7 +1055,48 @@ i{
     padding: 0px;
 }
 
+/* bootstrap navBar */
+.Navbar-font {
+  background-color: #ffffff;
+  height: 60px;
+}
+.header-item {
+  position: absolute;
+  right: 100px;
+  align-items: center;
+}
+.header-item a {
+  color: #434f56 !important;
+  text-decoration: none;
+  padding: 0px 20px;
 
+}
+.header-item a:hover {
+  color: #176ea5 !important;
+}
+.header-btn {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  background: #fe7a39;
+  border-radius: 100px;
+  padding: 0px 30px !important;
+  height: 34px;
+  margin-left: 50px;
+  text-align: center;
+  color: #ffffff !important;
+}
+.header-item a:last-child {
+  color: #fff !important;
+}
+
+/*  Responsive-NavBar */
+.mobile-responsive {
+  background: #ffffff;
+}
 /* header changes */
 .top-header img{
     width: 25px;

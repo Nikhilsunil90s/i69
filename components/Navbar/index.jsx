@@ -1,19 +1,18 @@
-import React, { useState, useRef, useEffect, useReducer } from "react";
-import Image from "next/image";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import { AppBar,makeStyles,CssBaseline,  Grid, Toolbar, Typography } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import "../../styles/navBar.module.css"
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
+// import React, { useState, useRef, useEffect, useReducer } from "react";
+// import Image from "next/image";
+// import PropTypes from "prop-types";
+// import classNames from "classnames";
+// import { AppBar,makeStyles,CssBaseline,  Grid, Toolbar, Typography } from "@material-ui/core";
+// import { Link } from "react-router-dom";
+// import Box from '@mui/material/Box';
+// import IconButton from '@mui/material/IconButton';
+// import Menu from '@mui/material/Menu';
+// import MenuIcon from '@mui/icons-material/Menu';
+// import Container from '@mui/material/Container';
+// import Avatar from '@mui/material/Avatar';
+// import Button from '@mui/material/Button';
+// import Tooltip from '@mui/material/Tooltip';
+// import MenuItem from '@mui/material/MenuItem';
 // import { useTranslation } from "react-i18next";
 // import "../../services/localizationService";
 // const propTypes = {
@@ -181,35 +180,157 @@ import MenuItem from '@mui/material/MenuItem';
       //     },
       //   },
       // }));
-const Header=()=>{
-  // const classes = useStyles();
+// const Header=()=>{
+//   const useStyles = makeStyles((theme) => ({
+//       navlinks: {
+//         marginLeft: theme.spacing(10),
+//         display: "flex",
+//       },
+//      logo: {
+//         flexGrow: "1",
+//         cursor: "pointer",
+//       },
+//       link: {
+//         textDecoration: "none",
+//         color: "white",
+//         fontSize: "20px",
+//         marginLeft: theme.spacing(20),
+//         "&:hover": {
+//           color: "yellow",
+//           borderBottom: "1px solid white",
+//         },
+//       },
+//     }));
+// const classes= useStyles()
+//   return(
+//     <AppBar position="static">
+//     <CssBaseline />
+//     <Toolbar>
+//       <Typography variant="h4" className={classes.logo}>
+//         Navbar
+//       </Typography>
+//         <div className={classes.navlinks}>
+//           <a to="/" className={classes.link}>
+//             Home
+//           </a>
+//           <a to="/about" className={classes.link}>
+//             FAQ
+//           </a>
+//           <a to="/contact" className={classes.link}>
+//             Contact
+//           </a>
+//           <a to="/faq" className={classes.link}>
+//             FAQ
+//           </a>
+//         </div>
+//     </Toolbar>
+//   </AppBar>  
   
+// // Header.propTypes = propTypes;
+// // Header.defaultProps = defaultProps;
+//   )}
+// export default Header;
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import Image from 'next/image';
+const pages = ['Home', 'FAQ', 'Policy','terms','Sign out'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-  return(
-  //   <AppBar position="static">
-  //   <CssBaseline />
-  //   <Toolbar>
-  //     <Typography variant="h4" className={classes.logo}>
-  //       Navbar
-  //     </Typography>
-  //       <div className={classes.navlinks}>
-  //         <Link to="/" className={classes.link}>
-  //           Home
-  //         </Link>
-  //         <Link to="/about" className={classes.link}>
-  //           About
-  //         </Link>
-  //         <Link to="/contact" className={classes.link}>
-  //           Contact
-  //         </Link>
-  //         <Link to="/faq" className={classes.link}>
-  //           FAQ
-  //         </Link>
-  //       </div>
-  //   </Toolbar>
-  // </AppBar>  
-  
-// Header.propTypes = propTypes;
-// Header.defaultProps = defaultProps;
- <></> )}
+const Header = () => {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  return (
+    <AppBar position="static">
+      <Container maxWidth="xl" className='top-header'>
+        <Toolbar disableGutters width={"100%"}>
+       <Image src={require("../../images/logo-right.jpg").default} />
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+          >
+            LOGO
+          </Typography>
+          <Box width={'100%'} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',float:"right" } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+            
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
+};
 export default Header;
