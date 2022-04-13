@@ -406,6 +406,7 @@
 import React, { useEffect } from "react";
 import Head from 'next/head'
 import Image from 'next/image'
+import DrawerComp from "../components/Navbar/Drawer";
 // import Style from "../styles/login.module.css"
 import loginbg3 from "../images/login-bg-3.png"
 import logoblack from "../images/logo-black.png"
@@ -414,14 +415,16 @@ import logoright from "../images/logo-right.jpg"
 import { style } from "@mui/system";
 const login=()=>{
 
-useEffect(()=>{
- $(document).ready(()=>{
-  var a = $('#divhtml span').css()
-  console.log('chols',a)
- })
-},[])
+// useEffect(()=>{
+//  $(document).ready(()=>{
+//   var a = $('#divhtml span').css()
+//   console.log('chols',a)
+//  })
+// },[])
 return(
   <>
+        <DrawerComp />
+
     <div className="login-container">
         <div id="divhtml" className="div-curve">
             <Image src={loginbg3} alt="" className="overlay" />

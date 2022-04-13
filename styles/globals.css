@@ -95,6 +95,23 @@ i{
     align-items: center;
     padding:14px;
 }
+.MuiSvgIcon-root{
+    left: 315px !important;
+}
+.MuiList-root{
+display: flex;
+flex-direction: column !important;
+width: 50vw !important;
+align-items: flex-start !important;
+padding-left: 20px !important;
+} 
+.MuiTabs-flexContainer ul{
+    list-style: none !important;
+}
+.muitabs{
+    display: grid !important;
+    width: 50vw !important;
+}
 .header-control h5{
     flex: 1;
     margin: 0;

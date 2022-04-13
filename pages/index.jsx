@@ -10,6 +10,7 @@ import FeaturesTiles from "../components/sections/FeaturesTiles";
 import FeaturesSplit from "../components/sections/FeaturesSplit";
 
 import Footer from "../components/Footer";
+import DrawerComp from "../components/Navbar/drawer";
 
 const Home = () => {
   return (
