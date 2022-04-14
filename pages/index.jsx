@@ -11,21 +11,22 @@ import FeaturesSplit from "../components/sections/FeaturesSplit";
 
 import Footer from "../components/Footer";
 import DrawerComp from "../components/Navbar/drawer";
-
+import About from "../components/About"
 const Home = () => {
   return (
     <>
       <MetaTags title={`Home | i69`} />
-      <Header />
-      <Hero className="illustration-section-01" />
+      {/* <Header /> */}
+<About />
+      {/* <Hero className="illustration-section-01" />
       <FeaturesTiles />
       <FeaturesSplit
         invertMobile
         topDivider
         imageFill
         className="illustration-section-02"
-      />
-      <Footer />
+      /> */}
+      {/* <Footer /> */}
     </>
   );
 };
