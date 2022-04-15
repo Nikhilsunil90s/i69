@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js"></script>
   </Head>
-  <Component {...pageProps} />;
+  <Component {...pageProps} />
   </>
   )
 }

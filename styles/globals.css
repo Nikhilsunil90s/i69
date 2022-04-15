@@ -36,6 +36,10 @@ p{
 i{
     cursor: pointer;
 }
+.body-lg{
+    position: fixed;
+    width: 100vw;
+}
 :root{
     --web-grey:#202427;
     --web-gold:#E2C76E;
@@ -43,7 +47,12 @@ i{
 .relative-body{
     position: relative;
 }
-
+.mg{
+    margin-top: 64px;
+}
+.pd{
+    padding: 0px !important;
+}
 .gold-color{
     color: var(--web-gold);
 }
@@ -56,6 +65,9 @@ i{
     font-size: 15px;
     font-weight: 600;
     background: linear-gradient(rgb(44, 44, 44) , black);
+}
+#myTab{
+    margin-top: 8px !important;
 }
 .global-btn-2{
     color: var(--web-gold);
@@ -124,15 +136,16 @@ padding-left: 20px !important;
     cursor: pointer;
 }
 .header-control img{
-    width: 35px;
+    width: 35px !important;
 }
 .logo-icon-nav{
-    width: 20px;
+    width: 20px !important;
 }
 
 /* profile carousel css */
 .h-c-g{
     background: var(--web-gold);
+    margin-top: 64px;
 }
 .h-c-g i{
     color: black !important;
@@ -214,10 +227,10 @@ padding-left: 20px !important;
     font-size: 18px;
 }
 .about-intrest .nav-link.active{
-    color: var(--web-gold);
-    background-color: transparent;
-    border: none;
-    border-bottom: 4px solid var(--web-gold);
+    color: var(--web-gold) !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 4px solid var(--web-gold) !important;
 }
 .about-tab{
     width: 100%;
@@ -234,8 +247,8 @@ padding-left: 20px !important;
     padding-bottom: 70px ;
     position: relative;
     height:calc(100vh - 200px);
+    padding-top:60%;
     overflow-y: scroll;
-    padding-top:30%;
 }
 .about-tab h3{
   font-weight: 700;
@@ -323,7 +336,7 @@ padding-left: 20px !important;
     }
 }
 /* login css */
-.login-container{
+#login-container{
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -337,9 +350,24 @@ padding-left: 20px !important;
     overflow-x: hidden;
 }
 
-.div-curve .logo{
+#logo{
+    top: -320px !important;
+    left: 139px !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    border: none !important;
+    margin: 0;
+    width: 0;
+    height: 0;
+    min-width: unset !important;
+    max-width: unset !important;
+    min-height: unset !important;
+    max-height: unset !important;
     width: 150px !important;
-    z-index: 3;
+    z-index: 3 !important;
+    height: 157px !important;
 }
 .div-curve h2{
     z-index: 3;
@@ -349,6 +377,7 @@ padding-left: 20px !important;
     z-index: 3;
     font-size: 18px;
     font-weight: 600;
+    
 }
 
 .div-curve{
@@ -365,7 +394,7 @@ padding-left: 20px !important;
 }
 
 /* for image cureve only  */
-/* .div-curve{
+.div-curve{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -374,8 +403,8 @@ padding-left: 20px !important;
     position: relative;
     margin-bottom: 100px;
     padding-top: 10%;
-} */
-.div-curve .overlay{
+} 
+.div-curve #overlay{
     width: 100vw !important;
     margin-left: calc(5vw) !important ;
     position: absolute !important;
@@ -385,13 +414,13 @@ padding-left: 20px !important;
 }
 
 /* for image cureve only  */
-/* .div-curve .overlay{
+ .div-curve #overlay{
     width: 100vw;
     top: -70px;
     height:500px;
     left: 0;
     position: absolute;
-} */
+} 
 .footer-text{
     width: 500px;
     text-align: center;
@@ -407,18 +436,18 @@ padding-left: 20px !important;
 }
 
 @media (max-width:750px) {
-    .div-curve .overlay {
+    .div-curve #overlay {
         top: unset;
     }
 }
 @media (max-width:624px) {
-    .div-curve .overlay {
+    .div-curve #overlay {
         top: unset;
     }
     .div-curve  {
         height: 240px;
     }
-    .div-curve .logo {
+    .div-curve #logo {
         width: 100px;
     }
 }
@@ -429,7 +458,7 @@ padding-left: 20px !important;
     }
 }
 @media (max-width:428px) {
-    .div-curve .logo{
+    .div-curve #logo{
         width: 80px;
     }
     .div-curve h2 {
@@ -442,7 +471,7 @@ padding-left: 20px !important;
         height: 60vw;
         width: 130%;
     }
-    .div-curve .overlay {
+    .div-curve #overlay {
         width: 100vw;
         margin-left: calc(15vw);
     }
@@ -478,7 +507,7 @@ padding-left: 20px !important;
     background-color: lightgray;
 }
 .user-list img{
-    width: 80px;
+    width: 80px !important; 
     border-radius: 50%;
     
 }
@@ -533,7 +562,7 @@ padding-left: 20px !important;
     background-size: cover;
     background-position: center;
 
-    height: calc(100vh - 154px) !important;
+    height: calc(100vh - 177px) !important;
     overflow-y: scroll;
     position: relative;
 }
@@ -564,6 +593,8 @@ padding-left: 20px !important;
 .bubble-1 span{
   width: 100%;
   word-break: break-all;
+text-align: left !important
+
 }
 .bubble-1 small{
   color: grey;
@@ -602,9 +633,12 @@ padding-left: 20px !important;
 .bubble-2 span{
   width: 100%;
   word-break: break-all;
+text-align: left !important
+
 }
 .bubble-2 small{
   color: grey;
+  text-align: right !important;
 }
 
 .bubble-2:before {
@@ -620,8 +654,14 @@ padding-left: 20px !important;
   bottom: -15px;
 }
 .msg-right{
-    text-align: right;
+    text-align: right ;
     padding: 20px 20px;
+}
+.msg-right small{
+    text-align: right !important       
+    }
+.msg-left small{
+
 }
 .msg-left{
     text-align: left;
@@ -630,8 +670,8 @@ padding-left: 20px !important;
    align-items: flex-end; 
 }
 .msg-left img{
-   width: 40px;
-   margin-right: 10px;
+   width: 40px !important;
+   margin-right: 10px !important;
    border-radius: 5px;
 }
 .chat-time{
@@ -652,7 +692,7 @@ padding-left: 20px !important;
     background: linear-gradient(#141517 , #202427);
     width: 100%;
     padding: 20px;
-    padding-top: 4px;
+    padding-top: 9px;
     padding-bottom: 4px;
     display: flex;
     align-items: center;
@@ -704,7 +744,7 @@ padding-left: 20px !important;
     z-index: 3;
 }
 .coin-area img{
-   width: 60px;
+   width: 60px !important;
 }
 .coin-area span{
    font-weight: 600;
@@ -764,13 +804,15 @@ padding-left: 20px !important;
     padding: 10px;
 }
 .search-tab .nav-link.active{
-    background: transparent;
-    color: var(--web-gold);
-    border: none;
-    border-bottom: 3px solid var(--web-gold);
+    background: transparent !important;
+    color: var(--web-gold) !important;
+    border: none !important;
+    border-bottom: 3px solid var(--web-gold) !important;
     
 }
-
+.nav-link:hover, .nav-link:focus {
+    color: rgb(161, 161, 161) !important;
+}
 .user-search-area{
     width: 100%;
     background-image: url(../images/texture-01.PNG);
@@ -790,7 +832,7 @@ padding-left: 20px !important;
 .search-items img{
     border-radius: 50%;
     width: 90%;
-    border: 4px solid var(--web-gold);
+    border: 4px solid var(--web-gold) !important;
 }
 .search-items span{
   font-weight: 600;
@@ -801,6 +843,7 @@ padding-left: 20px !important;
   border-radius: 300px;
   padding: 15px;
   margin-top: -20px;
+  z-index: 1;
 }
 @media (max-width:412px){
     .search-tab .nav-link{
@@ -1070,7 +1113,7 @@ padding-left: 20px !important;
     width: 10px;
 }
 .scr-cht{
-    height: calc(100vh - 176px);
+    height: calc(100vh - 177px) !important;
 }
 .chat-header-res{
     font-size: 19px;
@@ -1170,7 +1213,7 @@ padding-left: 20px !important;
     display: none;
 }
 .src-chat-mobile{
-    height: calc(100vh - 150) !important;
+    height: calc(100vh - 113px) !important;
 }
 
 @media (max-width:991px){

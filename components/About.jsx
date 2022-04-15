@@ -1,13 +1,14 @@
 import React from 'react'
 import img from "../images/dummy-01.jpg"
 import Image from 'next/image'
-import img1 from '../images/login-bg-2.png'
+import img1 from "../images/login-bg-2.png"
 import img2 from '../images/login-bg-3.png'
 import img3 from "../images/logo-right.jpg"
 const About =()=>{
 return(
     <>
      {/* <!-- header area --> */}
+    <div className='body-lg'>
     <div class="header-control h-c-g">
         <i class="fa fa-angle-left gold-icon" aria-hidden="true"></i>
         <div style={{flex:"1"}}>
@@ -19,7 +20,7 @@ return(
 
     <div className='container-fluid'>
 <div className='row'>
-<div className='col-7'>
+<div className='col-7 pd'>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -39,15 +40,15 @@ return(
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+    <span class="sr-only"></span>
   </a>
   <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+    <span class="sr-only"></span>
   </a>
 </div>
 </div>
-<div className='col-5'>
+<div className='col-5 pd'>
 <div class="tab-content col-lg-5 col-12 px-0" id="nav-tabContent" >
           
             <nav class="about-intrest">
@@ -106,14 +107,9 @@ return(
         </div>
 
 </div>
-<div class="sticky-nav">
-            <a href="search.html"><i class="fa fa-search " aria-hidden="true"></i></a>
-            <a href="index.html"><i class="fas fa-comment-dots"></i></a>
-            <a href="user-info.html"><i class="fas fa-user active"></i></a>
-        </div>
 
 </div>
-
+</div>
     </div>
  
     </>

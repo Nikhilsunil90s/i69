@@ -425,10 +425,10 @@ return(
   <>
         <DrawerComp />
 
-    <div className="login-container">
+    <div id="login-container">
         <div id="divhtml" className="div-curve">
-            <Image src={loginbg3} alt="" className="overlay" />
-            <Image src={logoblack} className="logo" alt="" />
+            <Image src={loginbg3} alt="" id="overlay" />
+            <Image src={logoblack} id="logo" alt="" />
             <h2 className="font-weight-bold">iSixtyNine</h2>
             <span>Connecting Hearts</span>
         </div>
