@@ -1,4 +1,6 @@
 import React from "react";
+import Header from '../components/Navbar/index'
+import Footer from '../components/FooterBar'
 import Image from "next/image";
 import cardImg from "../images/demo-user.jpg";
 import logo from "../images/logo-right.jpg"
@@ -6,9 +8,10 @@ import coin from "../images/coin.PNG"
 function Chats() {
   return (
     <>
+    <Header />
       <div className="body-lg">
         {/* <!-- header area --> */}
-<div className="mg"> 
+<div className=""> 
         <div className="row m-0">
           <div className="header-control header-control-msg h-c-g col-12">
             <i className="fa fa-angle-left gold-icon" aria-hidden="true"></i>
@@ -187,6 +190,7 @@ function Chats() {
         </div>
     
       </div>
+      <Footer />
     </>
   );
 }

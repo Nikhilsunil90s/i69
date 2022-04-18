@@ -1,4 +1,6 @@
 import React from 'react'
+import Header from '../components/Navbar/index'
+import Footer from '../components/FooterBar'
 import img from "../images/dummy-01.jpg"
 import Image from 'next/image'
 import img1 from "../images/login-bg-2.png"
@@ -7,6 +9,7 @@ import img3 from "../images/logo-right.jpg"
 const About =()=>{
 return(
     <>
+    <Header />
      {/* <!-- header area --> */}
     <div className='body-lg'>
     <div class="header-control h-c-g">
@@ -20,13 +23,8 @@ return(
 
     <div className='container-fluid'>
 <div className='row'>
-<div className='col-7 pd'>
+<div className='col-md-7 col-sm-12 pd'>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
     <Image src={img} />        </div>
@@ -48,7 +46,7 @@ return(
   </a>
 </div>
 </div>
-<div className='col-5 pd'>
+<div className='col-md-5 col-sm-12 pd'>
 <div class="tab-content col-lg-5 col-12 px-0" id="nav-tabContent" >
           
             <nav class="about-intrest">
@@ -111,7 +109,7 @@ return(
 </div>
 </div>
     </div>
- 
+ <Footer />
     </>
 )
 }

@@ -403,35 +403,25 @@
 
 // export default withStyles(register)(Login);
 
-import React, { useEffect } from "react";
-import Head from 'next/head'
+import React from "react";
 import Image from 'next/image'
-import DrawerComp from "../components/Navbar/Drawer";
-// import Style from "../styles/login.module.css"
-import loginbg3 from "../images/login-bg-3.png"
 import logoblack from "../images/logo-black.png"
-import $ from "jquery";
-import logoright from "../images/logo-right.jpg"
-import { style } from "@mui/system";
+import Header from '../components/Navbar/index'
+import Footer from '../components/FooterBar'
 const login=()=>{
-
-// useEffect(()=>{
-//  $(document).ready(()=>{
-//   var a = $('#divhtml span').css()
-//   console.log('chols',a)
-//  })
-// },[])
 return(
   <>
-        <DrawerComp />
+<Header />
 
     <div id="login-container">
-        <div id="divhtml" className="div-curve">
-            <Image src={loginbg3} alt="" id="overlay" />
+        <div id="divhtml " className="div-curve ">
             <Image src={logoblack} id="logo" alt="" />
-            <h2 className="font-weight-bold">iSixtyNine</h2>
-            <span>Connecting Hearts</span>
+            
+            <h2 className="font-weight-bold color-text">iSixtyNine</h2>
+            <p className="font-weight-bold color-text">Connecting Hearts</p>
+        
         </div>
+       
         <div className="pt-5 px-3">
             <button className="global-btn-2 mt-3"><i class="fa fa-facebook"></i> <span>LOGIN WITH FACEBOOK</span> </button>
             <button className="global-btn-2 mt-3"><i class="fa fa-twitter"></i> <span>LOGIN WITH TWITTER</span> </button>
@@ -439,7 +429,7 @@ return(
         </div>
         <p className="p footer-text">We don't post anything to Facebook and Linkedin, By signing in, you agree with our <a href="">Term and Conditions</a> and <a href="">Privacy Policy</a></p>
     </div>
-    
+   <Footer /> 
   </>
 )
 }

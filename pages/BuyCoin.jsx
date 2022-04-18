@@ -1,14 +1,17 @@
 import React from 'react'
+import Header from '../components/Navbar/index'
+import Footer from '../components/FooterBar'
 import logo from '../images/login-bg-3.png'
 import logo1 from '../images/logo-black.png'
 import Image from 'next/image'
+import { Avatar, ImageListItem } from '@mui/material'
 function BuyCoin(){
     return(
-
+        <>
+<Header />
 <div class="buy-container">
-        <div class="div-curve">
-            {/* <Image src={logo} alt="" class="overlay " />
-            <Image src={logo1} class="logo" alt="" /> */}
+         <div id="divhtml " className="div-curve ">
+            <Image src={logo1} id="logo" alt="" />
         </div>
         <h2 class="buy_coin_headeing py-3 pt-4">BUY CHAT COIN</h2>
         <div class="">
@@ -75,6 +78,8 @@ function BuyCoin(){
             </div>
           </div>  
     </div>
+    <Footer />
+    </>
     )
 }
 export default BuyCoin;

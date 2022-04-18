@@ -231,51 +231,84 @@
 //   )}
 // export default Header;
 import React,{useState} from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import Image from 'next/image';
-import { Tabs ,Tab,useMediaQuery,useTheme} from '@mui/material';
-import { color } from '@mui/system';
-import DrawerComp from './Drawer';
-
+import Image from 'next/image'; 
+import Link from 'next/link';
 const Header = () => {
-  const [value , setValue] = useState({});
-const theme = useTheme()
-const isMatch = useMediaQuery(theme.breakpoints.down('md'))
   return (
-    <AppBar sx={{background:"#202427" , minHeight:"55px !important"}}>
-        <Toolbar>
-          
-       <Image src={require("../../images/logo-right.jpg").default} />
-       {
-            isMatch ? (
-              <>
-              <DrawerComp  />
-              </>
-            ):(
-              <>
-              <Tabs sx={{marginLeft:"auto", textAlign:"center !important"}} value={value} onChange={(e,value)=>setValue(value)} textColor="inherit">
-<Tab  sx={{padding:"10px !important"}} label="Home" />
-<Tab  sx={{padding:"10px !important"}} label="FAQ"/>
-<Tab  sx={{padding:"10px !important" }} label="Policy"/>
-<Tab  sx={{padding:"10px !important"}} label="Terms"/>
-</Tabs>
-        <Button variant='contained' sx={{color:"black !important",background:"#E2C76E !important"}}>
-Sign out
-        </Button>
-         
+<>
+<nav class="navbar navbar-expand-lg display-d">
+<Image src={require("../../images/logo-right.jpg").default} width="30px" height="30px"/>
+ <div class="collapse bg navbar-collapse " id="navbarNav">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home<span class="sr-only"></span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">FAQ</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Policy</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Terms</a>
+    </li>
+    <li class="nav-item">
+      <Link href='/login'>
+    <Button className='button-1 !important'  variant='contained' sx={{color:"black !important",background:"#E2C76E !important",marginTop: "3px !important", padding:"4px 16px !important"}}>Sign out </Button>
+  </Link>  </li>
+  </ul>
+</div>
+</nav>
 
-              </>
-            )
-          }
 
+{/* Mobile view */}
+
+
+    <div className='row display'>
+      <div className='col-12 bg-color-nav'>
+      <nav>
+
+        <div class="pos-f-t bg-color-nav">
+  <div class="collapse " id="navbarToggleExternalContent">
+    <div class="bg-dark p-4 d-flex justify-content-center">
+    <ul class="navbar-nav list-for-list">
+      <li class="nav-item active">
+        <a class="" href="#">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="" href="#">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="" href="#">Policy</a>
+      </li>
+      <li class="nav-item">
+        <a class="" href="#">Terms</a>
+      </li>
+      <li class="nav-item">
+      <Button className='button-1 !important' variant='contained' sx={{color:"black !important",background:"#E2C76E !important"}}>Sign out </Button>
+      </li>
+    </ul>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark d-flex justify-content-end pd-4 bg-dark">
+
+      <button class="navbar-toggler pd-0" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+    </button>
+  </nav>
+
+      </div>
+</nav>
+  
+
+    </div>
+    
+</div>
+
+
+</>
          
-            
-        </Toolbar>
-        
-    </AppBar>
-  );
+       );
 };
 export default Header;

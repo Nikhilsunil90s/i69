@@ -10,23 +10,17 @@ import FeaturesTiles from "../components/sections/FeaturesTiles";
 import FeaturesSplit from "../components/sections/FeaturesSplit";
 
 import Footer from "../components/Footer";
-import DrawerComp from "../components/Navbar/drawer";
-import About from "../components/About"
-import Chats from "../components/Chats";
-import Search from "../components/Search";
+import About from "./About"
+import Chats from "./Chats";
+import Search from "./Search";
 import FooterBar from "../components/FooterBar"
-import BuyCoin from "../components/BuyCoin";
+import BuyCoin from "./BuyCoin";
 import Login from "./login";
 const Home = () => {
   return (
     <>
       <MetaTags title={`Home | i69`} />
-      <Header />
-{/* <About / >*/}
-<BuyCoin />
-{/* <Chats /> */}
-{/* <Search /> */}
-{/* <Login /> */}
+<Chats />
 <FooterBar />
 
 
