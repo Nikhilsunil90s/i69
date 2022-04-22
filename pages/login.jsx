@@ -403,12 +403,30 @@
 
 // export default withStyles(register)(Login);
 
-import React from "react";
+import React, { useState } from "react";
 import Image from 'next/image'
 import logoblack from "../images/logo-black.png"
 import Header from '../components/Navbar/index'
 import Footer from '../components/FooterBar'
-const login=()=>{
+const login = () => {
+    const [creds, setCreds] = useState({email: '', password: ''});
+    const onLoginCredsChange = (e) => {
+        setCreds(prev => ({...prev, [e.target.name] : e.target.value}));
+    }
+    const onLoginFormSubmit = (e) => {
+        e.preventDefault();
+        alert(`${creds.email} - ${creds.password}`)
+    }
+
+
+    const [showSignUp, setShowSignUp] = useState(true); 
+    const [signCreds, setSignCreds] = useState({ email: '', password: '', name: '', 'confirm': '' });
+    const onSignUpCredsChange = (e) => {
+        setSignCreds(prev => ({...prev, [e.target.name]: e.target.value}));
+    }
+    const onSignUpFormSubmit = (e) => {
+        e.preventDefault();
+    }
 return(
   <>
 <Header />
@@ -421,7 +439,31 @@ return(
             <p className="font-weight-bold color-text">Connecting Hearts</p>
         
         </div>
-       
+        {
+            showSignUp ?
+            <form className="ep-box" onSubmit={onSignUpFormSubmit}>
+                <input type="text" name="name" placeholder="Name" value={signCreds.name} onChange={onSignUpCredsChange}/>
+                <input type="email" name="email" placeholder="email" value={signCreds.email} onChange={onSignUpCredsChange} />
+                <input type="password" name="password" placeholder="Password" value={signCreds.password} onChange={onSignUpCredsChange} />
+                <input type="password" name="confirm" placeholder="Confirm Password" value={signCreds.confirm} onChange={onSignUpCredsChange} />
+                <div className="mx-auto">
+                    <button className="btn" type="submit">Submit</button>
+                </div>
+                <div className="text-center">
+                    <p>Have an account? <span className="ep-switch" onClick={() => setShowSignUp(prev => !prev)} >Login Here</span> </p>
+                </div>
+            </form> : 
+            <form className="ep-box" onSubmit={onLoginFormSubmit}>
+                <input type="email" name="email" value={creds.email} placeholder="Email" onChange={onLoginCredsChange}  />
+                <input type="password" name="password" value={creds.password} placeholder="Password" onChange={onLoginCredsChange}  />
+                <div className="mx-auto">
+                    <button className="btn" type="submit">Submit</button>
+                </div>
+                <div className="text-center">
+                    <p>New User? <span className="ep-switch" onClick={() => setShowSignUp(prev => !prev)} >Sign Up</span> </p>
+                </div>
+            </form>
+        }
         <div className="pt-5 px-3">
             <button className="global-btn-2 mt-3"><i class="fa fa-facebook"></i> <span>LOGIN WITH FACEBOOK</span> </button>
             <button className="global-btn-2 mt-3"><i class="fa fa-twitter"></i> <span>LOGIN WITH TWITTER</span> </button>
