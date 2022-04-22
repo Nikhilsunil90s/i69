@@ -1079,7 +1079,47 @@ text-align: left !important
 .src-chat-mobile{
     height: calc(100vh - 113px) !important;
 }
-
+/* login box */
+.ep-box{
+    color: black;
+    border: 2px solid #FDDD86;
+    background: #000;
+    padding: 0.9rem 2rem 2rem 2rem;
+    border-radius: 20px;
+    width: clamp(400px, 400px, 90%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.ep-box label{
+    text-align: center;
+    color: #FDDD86 ;
+}
+.ep-box input{
+    background-color: #000;
+    color: #FDDD86;
+    border-color: transparent;
+    padding: 0.5rem 0.5rem;
+    border-bottom: 2px solid #FDDD86;
+    border-radius: 10px;
+}
+.ep-box input::placeholder{
+    color: #FDDD86;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.ep-box .btn{
+    margin-top: 0.5rem;
+    border: 1px solid #FDDD86;
+    color: #FDDD86;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.ep-box .btn:hover{
+    background: #ffce48;
+    color: #000000;
+    font-weight: 600;
+}
 
 
 
@@ -1308,7 +1348,7 @@ text-align: left !important
       display: none !important;
   }
   .scr-cht {
-    height: calc(100vh - 158px) !important;
+    height: calc(100vh - 152px) !important;
 }
 .navbar-toggler:focus {
     text-decoration: none;
@@ -1422,3 +1462,4 @@ text-align: left !important
     padding-bottom: 60px;
 }
 }
+

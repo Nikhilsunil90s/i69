@@ -403,12 +403,38 @@
 
 // export default withStyles(register)(Login);
 
-import React from "react";
+import React, { useState } from "react";
 import Image from 'next/image'
 import logoblack from "../images/logo-black.png"
 import Header from '../components/Navbar/index'
 import Footer from '../components/FooterBar'
+import { gql, useQuery } from '@apollo/client';
+
+
+
 const login=()=>{
+    const [creds, setCreds] = useState({email: '', password: ''});
+    const onCredsChange = (e) => {
+        setCreds(prev => ({...prev, [e.target.name] : e.target.value}));
+    }
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+        alert(`${creds.email} - ${creds.password}`)
+    }
+
+    const query= gql`
+          query Countries {
+            countries {
+              code
+              name
+              emoji
+            }
+          }
+        `
+
+      const {data,loading,error}=useQuery(query)
+      console.log(data,loading,error,"hy");
+
 return(
   <>
 <Header />
@@ -421,7 +447,14 @@ return(
             <p className="font-weight-bold color-text">Connecting Hearts</p>
         
         </div>
-       
+       <form className="ep-box" autoComplete="off" onSubmit={onFormSubmit}>
+           <label className="text-center ">Login </label>
+           <input type="email" name="email" value={creds.email} placeholder="Email" onChange={onCredsChange}  />
+           <input type="password" name="password" value={creds.password} placeholder="Password" onChange={onCredsChange}  />
+           <div className="mx-auto">
+            <button className="btn" type="submit">Submit</button>
+           </div>
+       </form>
         <div className="pt-5 px-3">
             <button className="global-btn-2 mt-3"><i class="fa fa-facebook"></i> <span>LOGIN WITH FACEBOOK</span> </button>
             <button className="global-btn-2 mt-3"><i class="fa fa-twitter"></i> <span>LOGIN WITH TWITTER</span> </button>

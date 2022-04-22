@@ -16,6 +16,8 @@ import Search from "./Search";
 import FooterBar from "../components/FooterBar"
 import BuyCoin from "./BuyCoin";
 import Login from "./login";
+
+
 const Home = () => {
   return (
     <>

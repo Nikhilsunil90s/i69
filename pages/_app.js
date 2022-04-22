@@ -2,6 +2,14 @@ import "../styles/globals.css";
 import Head from "next/head";
 import { wrapper } from "../redux/store";
 import 'bootstrap/dist/css/bootstrap.css';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  useQuery,
+  gql
+} from "@apollo/client"
+import client from "../apollo-client";
 function MyApp({ Component, pageProps }) {
   return( 
   <>  
@@ -23,7 +31,9 @@ function MyApp({ Component, pageProps }) {
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js"></script>
   </Head>
+  <ApolloProvider client={client}>
   <Component {...pageProps} />
+  </ApolloProvider>
   </>
   )
 }
