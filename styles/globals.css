@@ -842,6 +842,9 @@ text-align: left !important
 .coin-parent .coin-left small{
     font-weight: bold;
 }
+.coin-parent .coin-right{
+    gap: 1rem;
+}
 .coin-parent .coin-right strike{
     font-weight: bold;
     font-size: 20px;
